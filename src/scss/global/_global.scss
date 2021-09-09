@@ -1,0 +1,84 @@
+@import "./reset";
+@import "./colors";
+@import "./mixins";
+
+body {
+  font-family: -apple-system, "Inter", "Helvetica Neue", sans-serif;
+}
+
+p {
+  color: $black;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  letter-spacing: -0.08rem;
+  line-height: 1;
+  margin: 0 0 1.125rem 0;
+  @include sm {
+    font-size: 2.75rem;
+  }
+  @include md {
+    font-size: 3.25rem;
+  }
+  @include lg {
+    font-size: 4.25rem;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin: 2.5rem 0 0.625rem 0;
+}
+
+h3 {
+  color: $gray700;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 2.5rem 0 0.625rem 0;
+}
+
+h4 {
+  color: $gray600;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 2.5rem 0 0.625rem 0;
+}
+
+ul {
+  margin: 2rem 0 1rem 2rem;
+  padding-left: 0.8rem;
+  li {
+    font-size: 1.125rem;
+    margin: 0 0 16px 0;
+  }
+}
+
+a {
+  color: $blue600;
+  transition: color 200ms ease-in-out;
+  &:hover {
+    color: $blue500;
+    text-decoration: underline;
+  }
+  &:focus,
+  &:active {
+    color: $blue700;
+  }
+}
+
+hr {
+  border-top: 1px solid $gray200;
+  margin-top: 40px;
+}
+.container {
+  padding: 2.5rem 1rem 6rem;
+}
+
+.img {
+  width: 100%;
+}

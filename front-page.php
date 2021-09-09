@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * The Frontpage template file
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package starter-theme
+ */
+get_header();
+?>
+
+<main>
+    <?php
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+
+            the_title('<h1>', '</h1>');
+            the_content();
+
+        endwhile;
+    endif;
+    ?>
+</main>
+
+<?php
+get_footer();
+?>

@@ -11,16 +11,23 @@ get_header();
 ?>
 
 <main>
-    <?php
-    if (have_posts()) :
-        while (have_posts()) : the_post();
+    <div class="container">
+        <section class="content-container">
 
-            the_title('<h1>', '</h1>');
-            the_content();
+            <?php
+            if (have_posts()) :
+                while (have_posts()) : the_post();
 
-        endwhile;
-    endif;
-    ?>
+                    the_content();
+
+                endwhile;
+            endif;
+            ?>
+        </section>
+        <article>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis repellendus asperiores nesciunt beatae deleniti perspiciatis perferendis recusandae ut voluptatibus fugit, impedit velit soluta quia maxime facilis voluptates, neque explicabo rerum.
+        </article>
+    </div>
 </main>
 
 <?php

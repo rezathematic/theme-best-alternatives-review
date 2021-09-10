@@ -50,6 +50,7 @@ add_action('wp_head', 'head_global_tags');
 function starter_theme_scripts()
 {
     // wp_enqueue_style('main', get_template_directory_uri() . '/src/css/home.css', array(), '1.0', 'all');
+    wp_enqueue_style('roundup', get_template_directory_uri() . '/src/css/roundup.css', array(), '1.0', 'all'); // TODO
     if ('top-picks' == get_post_type()) {
         wp_enqueue_style('roundup', get_template_directory_uri() . '/src/css/roundup.css', array(), '1.0', 'all');
     }

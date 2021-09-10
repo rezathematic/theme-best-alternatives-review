@@ -35,17 +35,18 @@
             <!-- Heading and breadcrumbs -->
             <div class="hero-section">
                 <?php
-                if ('top-picks' == get_post_type()) {
+                if ('top-picks' == get_post_type() && is_post_type_archive() == false) {
                     if (!empty(get_field('p_h1'))) {
                         echo '<h1>' . get_field('p_h1') . '</h1>';
                         echo '<h4>of ' . date('F Y') . '</h4>';
                     }
-                } elseif ('post' == get_post_type()) {
+                } elseif ('post' == get_post_type() || is_front_page()) {
                     the_title('<h1>', '</h1>');
-                } else {
-                    echo 'Butts';
                 }
                 ?>
+                <?php if (is_post_type_archive()) { ?>
+                    <h1><?php post_type_archive_title(); ?></h1>
+                <?php } ?>
                 <?php if (function_exists('seopress_display_breadcrumbs')) {
                     seopress_display_breadcrumbs();
                 } ?>

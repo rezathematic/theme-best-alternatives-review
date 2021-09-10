@@ -1,3 +1,5 @@
 {
-    "/src/css/main.css": "/src/css/main.css"
+    "/src/css/roundup.css": "/src/css/roundup.css",
+    "/src/css/single.css": "/src/css/single.css",
+    "/src/css/home.css": "/src/css/home.css"
 }

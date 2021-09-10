@@ -1,6 +1,6 @@
 # WordPress Theme: BestAlternativesReview.com
 
-Starter WordPress theme for [BestAlternativesReview.com](BestAlternativesReview.com)
+Starter WordPress theme for [BestAlternativesReview.com](https://BestAlternativesReview.com)
 
 ## TODO
 

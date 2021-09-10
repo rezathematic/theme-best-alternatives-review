@@ -11,16 +11,19 @@ get_header();
 ?>
 
 <main>
-    <?php
-    if (have_posts()) :
-        while (have_posts()) : the_post();
+    <div class="container">
+        <section class="content-container">
+            <?php
+            if (have_posts()) :
+                while (have_posts()) : the_post();
 
-            the_title('<h1>', '</h1>');
-            the_content();
+                    the_content();
 
-        endwhile;
-    endif;
-    ?>
+                endwhile;
+            endif;
+            ?>
+        </section>
+    </div>
 </main>
 
 <?php

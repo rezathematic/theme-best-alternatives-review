@@ -25,7 +25,12 @@ get_header();
             ?>
         </section>
         <article>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis repellendus asperiores nesciunt beatae deleniti perspiciatis perferendis recusandae ut voluptatibus fugit, impedit velit soluta quia maxime facilis voluptates, neque explicabo rerum.
+            <?php
+            if (get_field('review_article')) {
+                echo '<h2>Buying Guide</h2>';
+                echo get_field('review_article');
+            }
+            ?>
         </article>
     </div>
 </main>

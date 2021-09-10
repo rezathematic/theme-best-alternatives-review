@@ -11,6 +11,12 @@
       font-size: 1.375rem;
       font-weight: 600;
       margin-bottom: 1rem;
+      a {
+        color: $black;
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
 
     a {

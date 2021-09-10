@@ -14,11 +14,12 @@
         <header>
             <!-- Navbar -->
             <div class="header">
-                <div>
-                    <img src="https://toybin.org/wp-content/uploads/2021/08/Toybin-logo-125x125-1.png" alt="">
+                <div style="color: white; font-size: 1.2rem;">
+                    <!-- <img src="https://toybin.org/wp-content/uploads/2021/08/Toybin-logo-125x125-1.png" alt=""> -->
+                    Best Alternatives Review
                 </div>
                 <nav id="site-navigation">
-                    <button>Expand</button>
+                    <button>Menu</button>
                     <?php
                     wp_nav_menu(
                         array(

@@ -24,9 +24,6 @@ get_header();
             endif;
             ?>
         </section>
-        <article>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis repellendus asperiores nesciunt beatae deleniti perspiciatis perferendis recusandae ut voluptatibus fugit, impedit velit soluta quia maxime facilis voluptates, neque explicabo rerum.
-        </article>
     </div>
 </main>
 

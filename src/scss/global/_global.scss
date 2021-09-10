@@ -100,7 +100,11 @@ hr {
       h4 {
         color: $white;
       }
-      #breadcrumbs {
+      h4 {
+        margin-top: 0;
+        margin-bottom: 2rem;
+      }
+      .breadcrumb {
         color: $white;
         a {
           color: $white;
@@ -126,13 +130,23 @@ hr {
     }
   }
 }
-
+#site-navigation {
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+    color: $white;
+  }
+}
 nav {
   ul {
     display: none;
     list-style: none;
     margin: 0;
     padding-left: 0;
+    a {
+      color: $white;
+    }
     li {
       position: relative;
     }

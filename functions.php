@@ -37,6 +37,7 @@ add_action('after_setup_theme', 'starter_theme_setup');
 function head_global_tags()
 {
 ?>
+    <style>body{font-family: sans-serif;}</style>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">

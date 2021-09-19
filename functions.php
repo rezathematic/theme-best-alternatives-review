@@ -57,6 +57,7 @@ add_action('wp_head', 'head_global_tags');
 function starter_theme_scripts()
 {
     // wp_enqueue_style('main', get_template_directory_uri() . '/src/css/home.css', array(), '1.0', 'all'); // TODO
+    wp_enqueue_style('roundup', get_template_directory_uri() . '/src/css/roundup.css', array(), '1.0', 'all'); // TEMP, TODO: create a global template for pages and other templates
     if ('top-picks' == get_post_type() || is_front_page()) {
         wp_enqueue_style('roundup', get_template_directory_uri() . '/src/css/roundup.css', array(), '1.0', 'all');
     }

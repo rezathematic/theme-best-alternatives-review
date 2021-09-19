@@ -3,9 +3,6 @@
 @import "./components/button";
 
 .container {
-  max-width: $containerMaxWidth;
-
-  margin: 0 auto;
   .content-container {
     h2 {
       font-size: 1.375rem;

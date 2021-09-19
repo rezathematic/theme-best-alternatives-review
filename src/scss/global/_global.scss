@@ -93,6 +93,12 @@ hr {
       align-items: center;
       justify-content: space-between;
       padding: 1rem 1rem;
+      .logo {
+        a {
+          color: $white;
+          text-decoration: none;
+        }
+      }
     }
     .hero-section {
       padding: 1rem 1rem;
@@ -179,11 +185,8 @@ nav.toggled {
   }
 }
 
-main {
-  padding: 0 1rem;
-}
-
 .container {
   max-width: $containerMaxWidth;
   margin: 0 auto;
+  padding: 0 1rem;
 }

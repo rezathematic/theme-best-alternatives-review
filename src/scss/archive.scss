@@ -1,0 +1,34 @@
+@import "./global/global";
+@import "./global/utils";
+@import "./components/button";
+
+.container {
+  .content-container {
+    p {
+      color: $gray600;
+      font-size: 0.875rem;
+      padding: 0;
+      margin: 0;
+    }
+    .post-item-container {
+      margin: 2rem 0;
+      @include sm {
+        columns: 2;
+      }
+      .post-item {
+        width: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        border-top-width: 1px;
+        border-top-color: $gray300;
+        border-top-style: solid;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        a {
+          color: $black;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

@@ -17,9 +17,9 @@
         <header>
             <!-- Navbar -->
             <div class="header">
-                <div style="color: white; font-size: 1.2rem;">
+                <div class="logo" style="color: white; font-size: 1.2rem;">
                     <!-- <img src="https://toybin.org/wp-content/uploads/2021/08/Toybin-logo-125x125-1.png" alt=""> -->
-                    Best Alternatives Review
+                    <a href="<?php echo home_url(); ?>">Best Alternatives Review</a>
                 </div>
                 <nav id="site-navigation">
                     <button>Menu</button>
@@ -45,8 +45,9 @@
                     }
                 } elseif ('post' == get_post_type() || is_front_page()) {
                     the_title('<h1>', '</h1>');
-                }
-                ?>
+                } elseif (is_category()) { ?>
+                    <h1><?php single_cat_title(); ?></h1>
+                <?php } ?>
                 <?php if (is_post_type_archive()) { ?>
                     <h1><?php post_type_archive_title(); ?></h1>
                 <?php } ?>

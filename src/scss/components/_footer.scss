@@ -1,0 +1,57 @@
+@import "../global/mixins";
+
+footer {
+  background-color: $gray50;
+  margin-top: 6rem;
+  padding: 2rem 0 4rem;
+  border-top: 1px solid $gray200;
+  .grid-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    row-gap: 2rem;
+    div {
+      h4 {
+        color: $gray900;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin: 1rem 0 0.75rem;
+      }
+      p {
+        font-size: 0.875rem;
+        font-weight: 400;
+        margin-bottom: 0.25rem;
+        a {
+          color: $gray500;
+          transition: all 100ms ease-in-out;
+          &:hover {
+            color: $gray800;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .logo-footer {
+    margin-top: 4rem;
+    p {
+      font-size: 0.75rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+      color: $gray400;
+      a {
+        color: $gray900;
+        font-size: 1rem;
+        transition: all 100ms ease-in-out;
+      }
+    }
+    hr {
+      margin: 0.75rem 0;
+    }
+  }
+}

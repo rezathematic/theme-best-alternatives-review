@@ -1,50 +1,8 @@
 <?php
-
-/**
- * The main template file
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package starter-theme
- */
 get_header();
 ?>
 
 <main>
-    <style type="text/css" scoped>
-        .post-item-container {
-            margin: 2rem 0;
-        }
-
-        @media screen and (min-width: 576px) {
-            .post-item-container {
-                columns: 2;
-            }
-        }
-
-        .post-item {
-            width: 100%;
-            display: inline-flex;
-            flex-direction: column;
-            border-top-width: 1px;
-            border-top-color: #d8d9da;
-            border-top-style: solid;
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-
-        .post-item a {
-            color: #000;
-            font-weight: 500;
-        }
-
-        .container .content-container p {
-            color: #475569;
-            font-size: .875rem;
-            padding: 0;
-            margin: 0;
-        }
-    </style>
     <div class="container">
         <section class="content-container">
             <div class="post-item-container">

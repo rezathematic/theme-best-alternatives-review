@@ -116,3 +116,22 @@ add_action('init', 'disable_embeds_code_init', 9999);
 // Disable oEmbed emojis
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
+
+// Add Roundup Reviews Editor User Role
+if (get_role('roundup_editor')) {
+    remove_role('roundup_editor');
+}
+
+add_role("roundup_editor", "Roundup Editor", array(
+    "read" => true,
+    "read_roundups" => true,
+    "edit_roundups" => true,
+    "publish_roundups" => false,
+    "read_private_roundups" => true,
+    "edit_others_roundups" => true,
+    "edit_published_roundups" => true,
+    "delete_roundups" => false,
+    "delete_others_roundups" => false,
+    "delete_private_roundups" => false,
+    "delete_published_roundups" => false,
+));

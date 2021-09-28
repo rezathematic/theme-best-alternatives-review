@@ -37,19 +37,34 @@ add_action('after_setup_theme', 'starter_theme_setup');
 function head_global_tags()
 {
 ?>
-    <style>body{font-family: sans-serif;}</style>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TMJPWFV');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TMJPWFV');
+    </script>
     <!-- End Google Tag Manager -->
-<?php
+    <?php
 }
 add_action('wp_head', 'head_global_tags');
 
@@ -137,7 +152,8 @@ add_role("roundup_editor", "Roundup Editor", array(
 ));
 
 // Extend role of admin
-function extend_admin_role() {
+function extend_admin_role()
+{
     $admin = get_role('administrator');
     $caps = array(
         "read_roundups",
@@ -151,9 +167,74 @@ function extend_admin_role() {
         "delete_private_roundups",
         "delete_published_roundups",
     );
-    foreach($caps as $cap) {
+    foreach ($caps as $cap) {
         $admin->add_cap($cap);
     }
-    
 }
 add_action('init', 'extend_admin_role');
+
+// Export All roundups as CSV file
+function admin_reoundups_export_button($which)
+{
+    global $typenow;
+
+    if ('top-picks' === $typenow && 'top' === $which) {
+    ?>
+        <input type="submit" name="export_all_roundups" class="button button-primary" value="<?php _e('Export All Roundups'); ?>" />
+<?php
+    }
+}
+
+add_action('manage_posts_extra_tablenav', 'admin_reoundups_export_button', 20, 1);
+
+
+function export_all_roundups()
+{
+    if (isset($_GET['export_all_roundups'])) {
+        $arg = array(
+            'post_type' => 'top-picks',
+            'post_status' => 'publish',
+            'posts_per_page' => -1,
+        );
+
+        global $post;
+        $arr_post = get_posts($arg);
+        if ($arr_post) {
+
+            header('Content-type: text/csv');
+            header('Content-Disposition: attachment; filename="bar-roundups.csv"');
+            header('Pragma: no-cache');
+            header('Expires: 0');
+
+            $file = fopen('php://output', 'w');
+
+            fputcsv($file, array('Post Title', 'URL', 'Categories', 'Tags'));
+
+            foreach ($arr_post as $post) {
+                setup_postdata($post);
+
+                $categories = get_the_category();
+                $cats = array();
+                if (!empty($categories)) {
+                    foreach ($categories as $category) {
+                        $cats[] = $category->name;
+                    }
+                }
+
+                $post_tags = get_the_tags();
+                $tags = array();
+                if (!empty($post_tags)) {
+                    foreach ($post_tags as $tag) {
+                        $tags[] = $tag->name;
+                    }
+                }
+
+                fputcsv($file, array(get_the_title(), get_the_permalink(), implode(",", $cats), implode(",", $tags)));
+            }
+
+            exit();
+        }
+    }
+}
+
+add_action('init', 'export_all_roundups');

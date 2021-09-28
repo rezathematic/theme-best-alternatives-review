@@ -136,21 +136,24 @@ add_role("roundup_editor", "Roundup Editor", array(
     "delete_published_roundups" => false,
 ));
 
-// Extend role of admin to
-$admin = get_role('administrator');
-$caps = array(
-    "read" => true,
-    "read_roundups" => true,
-    "edit_roundups" => true,
-    "publish_roundups" => true,
-    "read_private_roundups" => true,
-    "edit_others_roundups" => true,
-    "edit_published_roundups" => true,
-    "delete_roundups" => true,
-    "delete_others_roundups" => true,
-    "delete_private_roundups" => true,
-    "delete_published_roundups" => true,
-);
-foreach($caps as $cap) {
-    $admin->add_cap($cap);
+// Extend role of admin
+function extend_admin_role() {
+    $admin = get_role('administrator');
+    $caps = array(
+        "read_roundups",
+        "edit_roundups",
+        "publish_roundups",
+        "read_private_roundups",
+        "edit_others_roundups",
+        "edit_published_roundups",
+        "delete_roundups",
+        "delete_others_roundups",
+        "delete_private_roundups",
+        "delete_published_roundups",
+    );
+    foreach($caps as $cap) {
+        $admin->add_cap($cap);
+    }
+    
 }
+add_action('init', 'extend_admin_role');

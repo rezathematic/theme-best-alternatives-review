@@ -17,7 +17,7 @@
             <p><a href="<?php echo home_url(); ?>">Best Alternatives Review</a></p>
             <p>Copyright © <?php echo date('Y'); ?> Best Alternatives Review. All rights reserved.</p>
             <hr>
-            <p>Best Alternative Reviews is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com</p>
+            <p>Best Alternatives Review is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com</p>
         </div>
     </div>
 </footer>

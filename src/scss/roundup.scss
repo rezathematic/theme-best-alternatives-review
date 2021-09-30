@@ -3,7 +3,8 @@
 @import "./components/button";
 
 .container {
-  .content-container {
+  .content-container,
+  article {
     h2 {
       font-size: 1.375rem;
       font-weight: 600;
@@ -49,6 +50,13 @@
       li {
         font-size: 0.875rem;
       }
+    }
+  }
+  article {
+    p {
+      color: $gray800;
+      font-size: 1.125rem;
+      line-height: 1.6;
     }
   }
 }

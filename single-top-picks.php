@@ -27,7 +27,6 @@ get_header();
         <article>
             <?php
             if (get_field('review_article')) {
-                echo '<h2>Buying Guide</h2>';
                 echo get_field('review_article');
             }
             ?>

@@ -21,6 +21,12 @@ footer {
         font-size: 0.875rem;
         font-weight: 600;
         margin: 1rem 0 0.75rem;
+        a {
+          color: $gray900;
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
       p {
         font-size: 0.875rem;

@@ -6,7 +6,7 @@
                 <p><a href="<?php echo home_url(); ?>">Home</a></p>
             </div>
             <div>
-                <h4>Categories</h4>
+                <h4><a href="/category">Categories</a></h4>
                 <?php
                 $categories = get_categories();
                 foreach ($categories as $category) {

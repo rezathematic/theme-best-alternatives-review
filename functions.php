@@ -78,7 +78,7 @@ function starter_theme_scripts()
     if ('top-picks' == get_post_type() || is_front_page()) {
         wp_enqueue_style('roundup', get_template_directory_uri() . '/src/css/roundup.css', array(), '1.0', 'all');
     }
-    if (is_archive() || is_category()) {
+    if (is_archive() || is_category() || is_page('category')) {
         wp_dequeue_style('roundup');
         wp_enqueue_style('archive', get_template_directory_uri() . '/src/css/archive.css', array(), '1.0', 'all');
     }

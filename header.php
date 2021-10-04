@@ -43,7 +43,7 @@
                         echo '<h1>' . get_field('p_h1') . '</h1>';
                         echo '<h4>of ' . date('F Y') . '</h4>';
                     }
-                } elseif ('post' == get_post_type() || is_front_page()) {
+                } elseif ('post' == get_post_type() || is_front_page() || is_page('category')) {
                     the_title('<h1>', '</h1>');
                 } elseif (is_category()) { ?>
                     <h1><?php single_cat_title(); ?></h1>
